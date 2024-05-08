@@ -1,4 +1,4 @@
-This is simple credit management app, which is contains the following:
+This is simple credit management app in Laravel v. 9.52.16, which is contains the following:
 1. Form for creation of a new credit with the following fields:
   - name of credit holder
   - amount (in BGN)
