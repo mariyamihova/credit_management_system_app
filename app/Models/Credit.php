@@ -38,8 +38,6 @@ class Credit extends Model
                 'borrowers.name',
             )
             ->where('status',1)
-            ->orderBy('credits.credit_number')
-            ->get()
-            ->toArray();
+            ->orderBy('credits.credit_number');
     }
 }
