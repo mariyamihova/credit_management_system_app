@@ -11,7 +11,9 @@ class CreditController extends Controller
     public function index(): \Illuminate\Contracts\View\View
     {
         $allActiveCredits = CreditService::getActiveCredits();
-        return view('credits.index', compact('allActiveCredits'));
+        $countOfActiveCredits = count($allActiveCredits->get());
+        $allActiveCredits = $allActiveCredits->paginate(2);
+        return view('credits.index', compact('allActiveCredits', 'countOfActiveCredits'));
     }
 
     public function create(): \Illuminate\Contracts\View\View
