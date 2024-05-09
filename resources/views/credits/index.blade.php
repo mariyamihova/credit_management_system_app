@@ -46,7 +46,9 @@
     </table>
     <div class="row">
         <div class="col-lg-12">
-            <div class="pull-left">{{ $allActiveCredits->onEachSide(2)->links() }}</div>
+            @if ($countOfActiveCredits > 0)
+                <div class="pull-left">{{ $allActiveCredits->onEachSide(2)->links() }}</div>
+            @endif
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route("credit.create") }}">Request new credit</a>
                 <a class="btn btn-success" href="{{ route("payment.create") }}">Make payment</a>
