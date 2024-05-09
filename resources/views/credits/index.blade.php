@@ -15,8 +15,8 @@
         </div>
     @endif
 
-    @if (count($allActiveCredits) > 0)
-        <h2 style="text-align: center">Total count of active credits at the moment:  {{ count($allActiveCredits) }}</h2>
+    @if ($countOfActiveCredits > 0)
+        <h2 style="text-align: center">Total count of active credits at the moment:  {{ $countOfActiveCredits }}</h2>
     @else
         <h2 style="text-align: center">There are no active credits at the moment</h2>
     @endif
@@ -46,6 +46,7 @@
     </table>
     <div class="row">
         <div class="col-lg-12">
+            <div class="pull-left">{{ $allActiveCredits->onEachSide(2)->links() }}</div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route("credit.create") }}">Request new credit</a>
                 <a class="btn btn-success" href="{{ route("payment.create") }}">Make payment</a>
