@@ -20,7 +20,7 @@ class CreditService
         ]));
     }
 
-    public static function getActiveCredits(): array
+    public static function getActiveCredits(): \Illuminate\Database\Eloquent\Builder
     {
         $credit = new Credit();
         return $credit->getAllCreditsWithBorrowers();
